@@ -1,3 +1,4 @@
+#haha
 #record_list中存放的是需要写入新文件的内容
 import os
 def file_handle(filename,backend_data,type,record_list=None):
