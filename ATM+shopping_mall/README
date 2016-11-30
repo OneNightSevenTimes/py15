@@ -1,0 +1,48 @@
+功能：ATM+购物车
+    ATM实现注册，转账，取现，还款，消费
+    ATM交易记录日志
+    购物商城调用atm支付接口
+
+ATM+shopping_mall
+├── bin
+│   ├── __init__.py
+│   └── start.py#执行程序
+├── core
+│   ├── atm_main.py#atm主程序
+│   ├── auth.py#登录验证
+│   ├── __init__.py
+│   ├── judge.py
+│   ├── logger.py#日志
+│   ├── __pycache__
+│   │   ├── atm_main.cpython-35.pyc
+│   │   ├── auth.cpython-35.pyc
+│   │   ├── __init__.cpython-35.pyc
+│   │   ├── judge.cpython-35.pyc
+│   │   ├── logger.cpython-35.pyc
+│   │   └── shopping_mall_main.cpython-35.pyc
+│   ├── shopping_mall_main.py#购物车
+│  
+├── db
+│   ├── accounts#用户信息
+│   │   ├── __init__.py
+│   │   ├── user1111.json
+│   │   ├── user2222.json
+│   │   ├── user3333.json
+│   │   ├── user44.json
+│   │   └── user55.json
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-35.pyc
+│   │   └── register.cpython-35.pyc
+│   └── register.py#注册
+├── __init__.py
+├── log#日志
+│   ├── __init__.py
+│   ├── log1111
+│   ├── log2222
+│   ├── log3333
+│   ├── log33333
+│   └── log55
+└── README
+测试账号1：1111 密码：1111
+测试账号2：2222 密码：2222
