@@ -1,0 +1,44 @@
+choose_lesson/
+├── bin
+│   ├── __init__.py
+│   └── start.py
+├── conf
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-35.pyc
+│   │   └── settings.cpython-35.pyc
+│   └── settings.py
+├── db
+│   ├── admin
+│   │   └── 92ed8d92-b625-11e6-9ca3-dc5360fb0efe
+│   ├── school
+│   │   └── a2c530b4-b625-11e6-a92b-dc5360fb0efe
+│   └── teacher
+│       └── a8de2754-b625-11e6-8fcb-dc5360fb0efe
+├── lib
+│   ├── commons.py
+│   ├── __init__.py
+│   └── __pycache__
+│       ├── commons.cpython-35.pyc
+│       └── __init__.cpython-35.pyc
+└── src
+    ├── identifier.py
+    ├── __init__.py
+    ├── models.py
+    ├── __pycache__
+    │   ├── identifier.cpython-35.pyc
+    │   ├── __init__.cpython-35.pyc
+    │   └── models.cpython-35.pyc
+    └── services
+        ├── admin_service.py
+        ├── initialize_service.py
+        ├── __init__.py
+        ├── __pycache__
+        │   ├── admin_service.cpython-35.pyc
+        │   ├── __init__.cpython-35.pyc
+        │   ├── initialize_service.cpython-35.pyc
+        │   ├── student_service.cpython-35.pyc
+        │   └── teacher_service.cpython-35.pyc
+        ├── student_service.py
+        └── teacher_service.py
+
