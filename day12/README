@@ -1,0 +1,45 @@
+rpc异步执行命令,利用rabbitmq
+run_task -h 192.168.147.147 -cmd ls
+check_all
+check_task task_id
+
+数据库
+create database homework charset utf8;
+use homework
+create table class(cid  int not null AUTO_INCREMENT primary key,caption char(16));
+insert into class (caption) values("三年二班");
+insert into class (caption) values("一年三班");
+insert into class (caption) values("三年一班");
+
+CREATE TABLE `student` (`sid` int(11) NOT NULL AUTO_INCREMENT,
+`sname` char(16) NOT NULL,
+`gender` char(4) NOT NULL,
+`class_id` int(11) NOT NULL,
+PRIMARY KEY (`sid`),
+KEY `fk_class_key` (`class_id`),CONSTRAINT `fk_class_key` FOREIGN KEY (`class_id`) REFERENCES `class` (`cid`) );
+
+insert into student(sname,gender,class_id) values('钢蛋','女',1);
+insert into student(sname,gender,class_id)values('铁锤','女',1);
+insert into student(sname,gender,class_id)values('山炮','男',2);
+
+select student.sid,student.sname,student.gender,class.caption from student left join class on student.class_id=class.cid;
+
+create table teacher(tid  int not null AUTO_INCREMENT primary key,tname char(16));
+insert into teacher(tname)values('波多');
+
+CREATE TABLE `course` (`cid` int(11) NOT NULL AUTO_INCREMENT ,
+`cname` char(16) NOT NULL,
+`teach_id` int(11) NOT NULL,
+PRIMARY KEY (`cid`),
+KEY `fk_class_key` (`teach_id`),CONSTRAINT `fk_class_key` FOREIGN KEY (`teach_id`) REFERENCES `teacher` (`tid`) );
+
+insert into course(cname,teach_id) values('生物',1);
+select course.cid,course.cname,teacher.tname from course left join teacher on course.teach_id=teacher.tid;
+
+CREATE TABLE `score` (`scoid` int(11) NOT NULL AUTO_INCREMENT,
+    -> `course_id` int(11) NOT NULL,
+    -> `student_id` int(11) NOT NULL,
+    -> `number` int(11) NOT NULL,
+    -> PRIMARY KEY (`scoid`),
+    -> KEY `fk_class_key` (`course_id`),CONSTRAINT `fk_class_key` FOREIGN KEY (`course_id`) REFERENCES `course` (`cid`) );
+Alter Table `score` Add Constraint `fk_student_key` Foreign Key (`student_id`) References `student` (`sid`);
