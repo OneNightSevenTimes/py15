@@ -82,7 +82,8 @@ class Operation_db(object):
     def change_type(self,change_name,change_after):
         dic = {'root':1,'regular':2}
         type = dic[change_after]
-        self.session.query(Users).filter(Users.name==change_name).update({Users.type_id:type})
+        if self.session.query(Users).filter(Users.name==change_name).update({Users.type_id:type}):
+            return True
         # v = self.session.query(Users).filter(Users.name==change_name).all()
         # print(v)
         # for row in v:

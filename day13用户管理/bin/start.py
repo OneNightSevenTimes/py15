@@ -5,6 +5,7 @@ sys.path.append(BASE_DIR)
 from conf import settings
 from db import data
 from core import auth
+from core import manage_user_type
 
 msg = '''
     1.用户类型管理
@@ -14,7 +15,7 @@ msg = '''
     5.退出
 '''
 menu = {
-    '1':data.Operation_db
+    '1':manage_user_type.type
 }
 
 def get_data():
@@ -30,23 +31,8 @@ def main():
         while True:
             print(msg)
             user_choice = input('请选择:').strip()
-            obj = menu[user_choice]()#Operation_db
-            choose(obj)
-
-def choose(obj):
-    while True:
-        dic = obj.check_data()
-        print(dic)
-        change_user = input('输入需要修改类型的用户(q退出):').strip()
-        username_dic = get_data()
-        if change_user in username_dic.keys():
-            change_type = input('输入需要之后的类型：').strip()
-        elif change_user == 'q':
-            break
-        else:
-            print('修改用户不存在')
-            break
-        obj.change_type(change_user, change_type)
+            obj = menu[user_choice]()
+            obj.run()
 
 
 
