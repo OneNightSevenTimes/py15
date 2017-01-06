@@ -55,17 +55,31 @@ class Operation_db(object):
         Base.metadata.create_all(self.engine)
 
     def add_data(self):
+        # self.session.add_all([
+        #     Users(name='alex1',password='123',type_id=1,extra='somebody1'),
+        #     Users(name='alex2',password='123',type_id=2,extra='somebody2'),
+        #     Users(name='alex3',password='123',type_id=1,extra='somebody3')
+        # ])
+        # self.session.commit()
+        # self.session.add_all([
+        #     Users_type(id=1,user_type='root'),
+        #     Users_type(id=2,user_type='regular'),
+        # ])
+        # self.session.commit()
         self.session.add_all([
-            Users(name='alex1',password='123',type_id=1,extra='somebody1'),
-            Users(name='alex2',password='123',type_id=2,extra='somebody2'),
-            Users(name='alex3',password='123',type_id=1,extra='somebody3')
+            Host(hostname='bj01-ngx1.com', port='22', ip='192.168.1.1'),
+            Host(hostname='bj01-ngx2.com', port='22', ip='192.168.1.2'),
+            Host(hostname='bj01-mql1.com', port='22', ip='192.168.1.3'),
         ])
         self.session.commit()
         self.session.add_all([
-            Users_type(id=1,user_type='root'),
-            Users_type(id=2,user_type='regular'),
+            HostToHostUser(host_id=1,host_user_id=1 ),
+            HostToHostUser(host_id=2,host_user_id=1 ),
+            HostToHostUser(host_id=2,host_user_id=2 ),
+            HostToHostUser(host_id=3,host_user_id=3 ),
         ])
         self.session.commit()
+
     def check_data(self):
         info = {}
         v = self.session.query(Users).join(Users_type).all()
@@ -78,7 +92,22 @@ class Operation_db(object):
             #print(item.name,item.password,item.type.user_type)
         # v = self.session.query(Users).all()
         # print(v)
+    def check_host_data(self):
+        '''把主机信息和对应授权的用户一起列出来'''
+        info = {}
+        v = self.session.query(Host).all()
+        for i in v:
+            #print(item.hostname,item.ip,item.port)
 
+            info['%s' % i.hostname] = {}
+            info['%s' % i.hostname]['IP'] = i.ip
+            info['%s' % i.hostname]['端口'] = i.port
+            info['%s' % i.hostname]['用户'] = []
+
+            obj = self.session.query(Host).filter(Host.hostname==i.hostname).first()
+            for item in obj.h:
+                info['%s'%i.hostname]['用户'].append(item.host_user.name)
+        return(info)
     def change_type(self,change_name,change_after):
         dic = {'root':1,'regular':2}
         type = dic[change_after]
@@ -88,8 +117,34 @@ class Operation_db(object):
         # print(v)
         # for row in v:
         #     print(row.type.user_type)
+    def add_user(self,username,password,type,extra):
+        self.session.add(Users(name=username,password=password,type_id=type,extra=extra))
+        #add_all时对象得放在一个列表中
+        self.session.commit()
+    def remove_user(self,username):
+        self.session.query(Users).filter(Users.name==username).delete()
+        self.session.commit()
+
+    def add_host(self,name,ip,port):
+        self.session.add(Host(hostname=name, port=port,ip=ip))
+        self.session.commit()
+
+    def remove_host(self,hostname):
+        self.session.query(Host).filter(Host.hostname==hostname).delete()
+        self.session.commit()
+
+    def change_host(self,hostname,ip,port):
+
+        self.session.query(Host).filter(Host.hostname==hostname).\
+            update({Host.hostname:hostname,Host.ip:ip,Host.port:port})
+
+
+
+
+
 if __name__ == '__main__':
     a = Operation_db()
     #a.create()
     #a.add_data()
-    a.check_data()
+    #a.check_data()
+    a.check_host_data()

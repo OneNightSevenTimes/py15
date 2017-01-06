@@ -6,6 +6,9 @@ from conf import settings
 from db import data
 from core import auth
 from core import manage_user_type
+from core import manage_user
+from core import manage_host_list
+from core import manage_host_to_user
 
 msg = '''
     1.用户类型管理
@@ -15,14 +18,11 @@ msg = '''
     5.退出
 '''
 menu = {
-    '1':manage_user_type.type
+    '1':manage_user_type.type,
+    '2':manage_user.HostManage,
+    '3':manage_host_list.host
 }
 
-def get_data():
-    '''获取user,password,type'''
-    user_obj = data.Operation_db()
-    username_dic = user_obj.check_data()
-    return username_dic
 
 def main():
     obj_login = auth.auth()
@@ -33,8 +33,6 @@ def main():
             user_choice = input('请选择:').strip()
             obj = menu[user_choice]()
             obj.run()
-
-
 
 if __name__ == '__main__':
     main()

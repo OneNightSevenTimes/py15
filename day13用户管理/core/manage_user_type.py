@@ -8,9 +8,12 @@ class type(object):
 
     def run(self):
         while True:
-            self.user_obj = data.Operation_db()
+            self.user_obj = data.Operation_db()#重新实例化一下，去数据库中重新取数据
             dic = self.user_obj.check_data()
-            print(dic)
+
+            print('\033[31;1m用户类型如下\033[0m'.center(30, '*'))
+            for item in dic.keys():
+                print('user:%s  type:%s'%(item,dic[item]['type']))
             change_user = input('输入需要修改类型的用户(q退出):').strip()
             if change_user in self.username_dic.keys():
                 change_type = input('输入需要之后的类型：').strip()
@@ -21,4 +24,4 @@ class type(object):
                 break
             status = self.user_obj.change_type(change_user, change_type)
             if status:
-                print('修改成功')
+                print('\033[31;1m修改成功\033[0m')
