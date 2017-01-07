@@ -105,6 +105,7 @@ class Operation_db(object):
             info['%s' % i.hostname]['用户'] = []
 
             obj = self.session.query(Host).filter(Host.hostname==i.hostname).first()
+            #取主机对应的用户
             for item in obj.h:
                 info['%s'%i.hostname]['用户'].append(item.host_user.name)
         return(info)
@@ -137,6 +138,27 @@ class Operation_db(object):
 
         self.session.query(Host).filter(Host.hostname==hostname).\
             update({Host.hostname:hostname,Host.ip:ip,Host.port:port})
+
+    def add_host_user(self,host,user):
+        '''用户授权'''
+        host_id = self.session.query(Host.nid).filter(Host.hostname==host).first()
+        host_id = host_id[0]
+        user_id = self.session.query(Users.id).filter(Users.name==user).first()
+        user_id = user_id[0]
+        self.session.add(HostToHostUser(host_id=host_id,host_user_id=user_id))
+        self.session.commit()
+
+    def remove_host_user(self,host,user):
+        '''用户删除权限'''
+        host_id = self.session.query(Host.nid).filter(Host.hostname == host).first()
+        host_id = host_id[0]
+        user_id = self.session.query(Users.id).filter(Users.name == user).first()
+        user_id = user_id[0]
+        self.session.query(HostToHostUser).filter(HostToHostUser.host_id==host_id,HostToHostUser.host_user_id==user_id).delete()
+        self.session.commit()
+
+
+
 
 
 

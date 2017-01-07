@@ -20,7 +20,9 @@ msg = '''
 menu = {
     '1':manage_user_type.type,
     '2':manage_user.HostManage,
-    '3':manage_host_list.host
+    '3':manage_host_list.host,
+    '4':manage_host_to_user.HostToUser
+
 }
 
 

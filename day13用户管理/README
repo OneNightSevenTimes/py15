@@ -8,11 +8,23 @@ SqlAchcmy应用：用户管理
     3、主机表（ip，port..）
 
     4、关系表
-        1   1
-
     功能：
         登录（用户表）中验证
         - 用户类型管理（增删改查）
         - 用户管理（增删改查）
         - 主机表管理（增删改查）-- 导入excel  # xlwt,xlrd
         - 用户分配主机
+使用：
+    bin/start.py
+    登录
+        1.用户类型管理
+        2.用户管理
+        3.主机表管理
+        4.分配主机
+        5.退出
+        选择数字进入
+                    *  check
+                    *  add
+                    *  remove
+                    *  change
+                    输入check add remove change选择对应功能
