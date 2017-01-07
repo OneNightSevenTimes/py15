@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load mytags %}
+{% load bootstrap %}
+{% block content %}
+{% include 'nav_cat_bar.html' %}
+
+<div>
+    <div class="form-inline" id="show_svn_url">
+        <form method="post" action="/zsvn/svn/get_svn_url/">
+            <label>用户名</label>
+            <input name="search_username" type="text" class="form-control">
+            <button type="submit" class="btn btn-success">查询</button>
+        </form>
+    </div>
+
+    {% if show_result %}
+        <div id="result">
+            <label>用户{{ search_name }}拥有的权限如下：</label>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>权限</th>
+                        <th>授权类型</th>
+                        <th>分组名称</th>
+                        <th>删除</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for get_url in find_url %}
+                        <tr>
+                            <td>{{ get_url.url }}</td>
+                            <td>{{ get_url.permit }}</td>
+                            {% if 'user' in get_url.permit_type and 'group' in get_url.permit_type %}
+                                <td>直接授权,分组授权</td>
+                                <td>{{ get_url.groupname }}</td>
+                                <td><button onclick="delete_from_section('{{ search_name }}', '{{ get_url.url }}')" class="btn btn-primary">直接删除</button>
+                                    <button onclick="delete_from_group('{{ get_url.groupname }}', '{{ search_name }}')" class="btn btn-success">从分组中删除</button>
+                                </td>
+                            {% elif 'user' in get_url.permit_type %}
+                                <td>直接授权</td>
+                                <td>{{ get_url.groupname }}</td>
+                                <td><button onclick="delete_from_section('{{ search_name }}', '{{ get_url.url }}')" class="btn btn-primary">直接删除</button></td>
+                            {% elif 'group' in get_url.permit_type %}
+                                <td>分组授权</td>
+                                <td>{{ get_url.groupname }}</td>
+                                <td><button onclick="delete_from_group('{{ get_url.groupname }}', '{{ search_name }}')" class="btn btn-success">从分组中删除</button></td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+{% block self_footer_js %}
+<script>
+
+function delete_from_section(del_user, url){
+    confirm_status = confirm('确认要删除该用户？');
+    if(confirm_status == true){
+        $.post("{% url 'delete_from_section' %}", {"del_user": del_user, "url": url}, function(ret){
+            alert(ret);
+            location.reload()
+        })
+    }
+}
+
+function delete_from_group(groupname, username){
+    confirm_status = confirm('确认从组中删除该用户？');
+    if(confirm_status == true){
+        $.post("{% url 'delete_from_group' %}", {"groupname": groupname, "username": username}, function(ret){
+            alert(ret);
+            location.reload()
+        })
+    }
+}
+
+</script>
+{% endblock %}

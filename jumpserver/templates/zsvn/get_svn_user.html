@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load mytags %}
+{% load bootstrap %}
+{% block content %}
+{% include 'nav_cat_bar.html' %}
+
+<div>
+    <div class="container" id="show_svn_url">
+        <form method="post" action="/zsvn/svn/get_svn_user/" class="form-inline">
+            <div class="row">
+                <label>svn地址</label>
+                <input name="search_url" type="text" class="form-control" style="width: 50%;" placeholder="https://svn.gomeo2o.cn:8443/xxxx">
+                <button type="submit" class="btn btn-success">查询</button>
+            </div>
+        </form>
+    </div>
+
+    {% if show_result %}
+        <div id="result">
+            <label>地址{{ search_url }}拥有的用户如下：</label>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>用户名</th>
+                        <th>权限</th>
+                        <th>授权类型</th>
+                        <th>组名</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for get_user in find_user %}
+                        <tr>
+                            <td>{{ get_user.username }}</td>
+                            <td>{{ get_user.permit }}</td>
+                            {% if 'user' in get_user.permit_type and 'group' in get_user.permit_type %}
+                                <td>直接授权,分组授权</td>
+                            {% elif 'user' in get_user.permit_type %}
+                                <td>直接授权</td>
+                            {% elif 'group' in get_user.permit_type %}
+                                <td>分组授权</td>
+                            {% endif %}
+                            <td>{{ get_user.groupname }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+{% block self_footer_js %}
+<script>
+
+</script>
+{% endblock %}

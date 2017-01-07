@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load mytags %}
+{% load bootstrap %}
+{% block content %}
+{% include 'nav_cat_bar.html' %}
+    <div class="form-group">
+        <a href="/zsvn/svn/get_svn_url/" class="btn btn-primary">查询用户开通的svn权限</a>
+        <a href="/zsvn/svn/get_svn_user/" class="btn btn-success">查询SVN目录开通哪些用户权限</a>
+        <a href="/zsvn/svn/add_svn_group_user/" class="btn btn-warning">添加SVN用户到组</a>
+        <a href="/zsvn/svn/add_svn_url_user/" class="btn btn-info">添加用户或组到SVN地址</a>
+        <a href="/zsvn/svn/add_svn_newgroup/" class="btn btn-danger">添加SVN用户组</a>
+        <a href="/zsvn/svn/show_svn_log/" class="btn btn-info">查看操作日志/回滚</a>
+        <a href="/zsvn/svn/show_svn_commit_log/" class="btn btn-success">查看SVN提交日志</a>
+    </div>
+
+{% endblock %}
+
+{% block self_footer_js %}
+<script>
+
+</script>
+{% endblock %}

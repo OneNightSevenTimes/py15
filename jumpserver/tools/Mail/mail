@@ -1,0 +1,76 @@
+#!/usr/bin/perl 
+#perl mail --title 主题 --text 内容 --to aaa@163.com --to 38036763@qq.com --attach_path mail --attach_path a.jpg
+use strict;
+use warnings;
+use FindBin;
+use lib "$FindBin::Bin/exlib/lib/perl5";
+use Mail::Sender;
+use POSIX;
+use Encode;
+use Getopt::Long;
+my ($title,$text,@to,@attach_path);
+GetOptions(
+    'title=s' => \$title,
+    'text=s'  => \$text,  
+    'to=s'    => \@to,
+    'attach_path=s' => \@attach_path,
+);
+unless ($title) {
+    print 'no title';
+    exit;
+}
+unless ($text) {
+    print 'no text';
+    exit;
+}
+if ($#to+1 < 1) {
+    print 'no address';
+    exit;
+}
+my $attachs;
+if ($#attach_path+1 < 1) {
+    $attachs='N';
+}else{
+    foreach (@attach_path){
+        $attachs.=$_.",";
+    }
+    $attachs=~s/\,$//g;
+
+}
+
+sub mail(@) {
+    my ($title,$text,$attachs,$to)=@_;
+    my $address;
+    foreach (@{$to}){
+        $address.=$_.",";
+    }
+    $address=~s/\,$//g;
+    open my $DEBUG, ">> /tmp/mail.txt"
+            or die "Can't open the debug file: $!\n";
+#    $title = encode("gb2312",decode("utf8","$title"));
+#    $text = encode("GB2312",decode("utf8","$text"));
+    my $sender = new Mail::Sender {    
+        smtp => 'mail.yolo24.com',        
+        from => 'o2o-monitor@yolo24.com', 
+     #   debug => $DEBUG,
+     #   auth => 'LOGIN',        
+     #   authid => 'o2o-monitor',        
+        authpwd => '3J8yEiNKVVaLGOgI5COhUeoeFc0HY5hKaJcQVVZ9Dog=',
+        ctype => 'text/plain; charset=GB2312',
+        encoding => 'GB2312',
+        to => "$address",           
+        subject => "$title",              
+    } or die "Can't create the Mail::Sender object: $Mail::Sender::Error\n";    
+    if ($attachs eq 'N'){
+        $sender->Open({});
+        $sender->SendEnc("$text");
+
+    }else{
+        $sender->MailFile({         
+            msg => "$text",
+            file =>"$attachs"
+        }) or die $Mail::Sender::Error,"\n";    
+    }
+    $sender->Close();
+}
+mail($title,$text,$attachs,\@to);

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load mytags %}
+{% load bootstrap %}
+{% block content %}
+{% include 'nav_cat_bar.html' %}
+
+<div>
+    <div class="container">
+        {% if error %}
+            <div class="alert alert-warning text-center">{{ error }}</div>
+        {% endif %}
+        {% if msg %}
+            <div class="alert alert-success text-center">{{ msg }}</div>
+        {% endif %}
+
+        <form method="post" action="/zsvn/svn/add_svn_newgroup/">
+            <div class="row form-group form-inline">
+                <label>组名称</label>
+                <input type="text" name="add_group" class="form-control">
+            </div>
+            <div class="row form-group form-inline">
+                <label>用户名</label>
+                <input name="add_user" type="text" class="form-control">
+                <label style="color: red;">多个用户用","隔开</label>
+            </div>
+
+            <div class="row form-group form-inline">
+                <button type="submit" class="btn btn-success">添加</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block self_footer_js %}
+<script>
+
+</script>
+{% endblock %}
