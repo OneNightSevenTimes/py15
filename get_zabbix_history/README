@@ -1,4 +1,5 @@
-获取双11当天00:00-01:00CPU负载和使用率
+获取双11当天和前天00:00-01:00CPU负载和使用率
+为了简单就直接写在文本里了，又继xlwt、xlrd模块进行优化，直接写入excel表中
 配置文件在conf/settings.py下
 执行bin下的start.py即可
     python3 start.py
