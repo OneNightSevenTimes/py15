@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <style>
+        body {
+                margin: 0;
+            }
+
+        .pg_head {
+            height: 30px;
+            background-color: silver;
+
+        }
+
+        .main {
+            font-size: 15px;
+            line-height: 30px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .pg_head_left {
+            float: left;
+            margin-left: 50px;
+            width: 500px;
+        }
+        .pg_head_right {
+            float: right;
+            margin-right: 50px;
+            width: 600px;
+        }
+        .title{
+            margin-left: 350px;
+            margin-top: 20px;
+            height: 90px;
+            position: relative;
+
+
+        }
+        #search{
+            width: 300px;
+            height: 25px;
+            position: absolute;
+
+            top: 10px;
+        }
+        .title_right{
+            width: 750px;
+            height: 90px;
+            position: relative;
+            float: right;
+
+        }
+        .search{
+            width: 400px;
+            height: 90px;
+            position: relative;
+            float: left;
+
+
+        }
+        #submit{
+            width: 60px;
+            height: 31px;
+            position: absolute;
+            right: 47px;
+            top: 10px;
+
+        }
+        #search_img{
+            position: absolute;
+            top: 17px;
+            right: 67px;
+        }
+        .shop_car{
+            float: right;
+            margin-right: 120px;
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+            border: 1px solid gainsboro;
+            background-color: #dddddd;
+            text-align: center;
+            line-height: 30px;
+        }
+        span{
+            font-size: 14px;
+        }
+        .navigation_bar{
+            /*margin-top: 30px;*/
+            height: 40px;
+            background-color: crimson;
+        }
+        .all_shop{
+            float: left;
+            background-color: #C60A0A;
+            width: 200px;
+            font-size: 15px;
+            color: white;
+            line-height: 40px;
+            text-align: center;
+            /*z-index: 999;*/
+            margin-left: 100px;
+        }
+        .nav{
+            float: left;
+            left: 200px;
+        }
+         .nav span {
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+            font-size: 15px;
+            color:white;
+            line-height: 40px;
+            text-align: center;
+        }
+        .nav span:hover{
+            background-color: darkred;
+        }
+        .bbs{
+            float: right;
+            margin-right: 80px;
+            background-color: #C60A0A;
+        }
+        .bbs span{
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+            font-size: 15px;
+            color:white;
+            line-height: 40px;
+            text-align: center;
+        }
+        .bbs span:hover{
+            background-color: darkred;
+        }
+
+        .pg_body_left{
+            width: 299px;
+            height: 800px;
+            float: left;
+
+        }
+        .item{
+            /*width: 198px;*/
+            height: 50px;
+            /*float: left;*/
+            margin-left: 100px;
+            border: 1px solid #dddddd;
+
+        }
+        .hot{
+            height: 30px;
+            margin-left: 100px;
+            border: 1px solid #dddddd;
+            margin-top: 20px;
+            background-color: #eeeeee;
+        }
+        .hot_content{
+            height: 20px;
+            margin-left: 100px;
+            border: 1px solid #dddddd;
+            line-height: 20px;
+        }
+        .item span{
+            display: inline-block;
+            margin-top: 6px;
+            margin-left: 10px;
+            font-size: 10px;
+        }
+        .pg_body_right{
+            float: left;
+            margin-top: 20px;
+            margin-left: 10px;
+            width: 950px;
+            margin-bottom: 10px;
+        }
+        .info{
+            /*margin-top: 10px;*/
+            border: 1px solid #dddddd;
+            width: 950px;
+            height: 160px;
+        }
+
+        .line{
+            width: 950px;
+            height: 0;
+            border: 1px solid red;
+            margin-top: 10px;
+        }
+        .line_dashed{
+            width: 900px;
+            height: 0;
+            border: 1px dashed #dddddd;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+        .info span{
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .sort{
+            border: 1px solid #dddddd;
+            background: #eeeeee;
+            width: 950px;
+            height: 30px;
+            margin-top: 50px;
+            line-height: 30px;
+            font-size: 15px;
+        }
+        .sort span{
+            color: blue;
+        }
+        .item_pic{
+            float: left;
+            margin-top: 5px;
+            margin-left: 5px;
+            width: 210px;
+            height: 230px;
+            border: 1px solid red;
+            text-align: center;
+            position: relative;
+
+        }
+        .price{
+            float: left;
+            margin-top: 15px;
+            margin-left: 15px;
+
+        }
+        .price span{
+            font-size: 15px;
+            color: red;
+        }
+
+        .total{
+            float: right;
+            margin-right: 10px;
+        }
+        .number{
+            width: 80px;
+            height: 20px;
+            margin-left: 70px;
+            margin-top: 13px;
+            border: 1px solid #dddddd;
+        }
+        .submit{
+            width: 20px;
+            height: 20px;
+            background-color: #dddddd;
+        }
+        .plus{
+            width: 20px;
+            height: 20px;
+            background-color: #dddddd;
+        }
+        .action{
+            width: 40px;
+            height: 20px;
+            bottom: 11px;
+            right: 5px;
+            border: 1px solid #dddddd;
+            position: absolute;
+            background-color: #C60A0A;
+            color: white;
+        }
+        .more{
+            width: 150px;
+            height: 20px;
+            border: 1px solid #dddddd;
+            margin-left: 367px;
+            margin-top: -1px;
+            text-align: center;
+
+        }
+        .blank{
+            width: 150px;
+
+            z-index: 999;
+            border: solid 1px white;
+            margin-left: 367px;
+            margin-top: -23px;
+        }
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="pg_head">
+        <div class="main">
+
+            <div class="pg_head_left">
+                <a class="text" href="#">*收藏本站</a>
+            </div>
+            <div class="pg_head_right">
+                <a class="text" href="1.html">登录</a>&nbsp;
+                <a class="text" href="2.html">注册</a>&nbsp;
+                <a class="text" href="#">我的订单</a>&nbsp;
+                <a class="text" href="#">我的收藏</a>&nbsp;
+                <a class="text" href="#">VIP会员俱乐部</a>&nbsp;
+                <a class="text" href="#">客户服务</a>&nbsp;
+                <a class="text" href="#">关注</a>&nbsp;
+                <a class="text" href="#">手机版</a>
+            </div>
+        </div>
+    </div>
+    <div class="title">
+        <img style="float: left" src="image/8.png" alt="">
+        <div class="title_right">
+            <div class="search">
+                <input id="search" type="text">
+                <input id="submit"type="submit" value="">
+                <i id="search_img" class="fa fa-search" aria-hidden="true"></i>
+                <span style="margin-top: 45px;display: inline-block;font-size: 15px;opacity: 0.3">
+                    热门搜索：火龙果 瓜子
+                </span>
+            </div>
+            <div class="shop_car">
+                <span>购物车</span>
+                <span style="color: red">2</span>
+                <span>件</span>
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="navigation_bar">
+        <div class="all_shop">
+            全部商品分类
+        </div>
+        <div class="nav">
+            <span>首页</span>
+            <span>网上超市</span>
+            <span>水果超市</span>
+            <span>超级订餐</span>
+            <span>生活超市</span>
+            <span>研究院</span>
+        </div>
+        <div class="bbs">
+            <span>研究院</span>
+            <span>研究院</span>
+            <span>论坛</span>
+        </div>
+    </div>
+
+    <div class="pg_body">
+        <div class="pg_body_left">
+            <div class="item">
+                <span style="font-size: 15px;font-weight: 600">南方水果</span>
+                <br>
+                <span>火龙果</span>
+                <span>火龙果</span>
+                <span>火龙果</span>
+            </div>
+            <div class="item">
+                <span style="font-size: 15px;font-weight: 600">南方水果</span>
+                <br>
+                <span>火龙果</span>
+                <span>火龙果</span>
+                <span>火龙果</span>
+            </div>
+            <div class="item">
+                <span style="font-size: 15px;font-weight: 600">南方水果</span>
+                <br>
+                <span>火龙果</span>
+                <span>火龙果</span>
+                <span>火龙果</span>
+            </div>
+            <div class="item">
+                <span style="font-size: 15px;font-weight: 600">南方水果</span>
+                <br>
+                <span>火龙果</span>
+                <span>火龙果</span>
+                <span>火龙果</span>
+            </div>
+            <div class="item">
+                <span style="font-size: 15px;font-weight: 600">南方水果</span>
+                <br>
+                <span>火龙果</span>
+                <span>火龙果</span>
+                <span>火龙果</span>
+            </div>
+            <div class="item">
+                <span style="font-size: 15px;font-weight: 600">南方水果</span>
+                <br>
+                <span>火龙果</span>
+                <span>火龙果</span>
+                <span>火龙果</span>
+            </div>
+            <div class="hot">
+                <span style="line-height: 30px;margin-left: 10px;font-weight: 600">热销排行榜</span>
+            </div>
+            <div class="hot_content">
+                <span>content</span>
+            </div>
+
+        </div>
+        <div class="pg_body_right">
+            <span>福特>蒙迪欧>2.0T</span>
+            <div class="line"></div>
+
+            <div class="info">
+                <span style="display: inline-block;margin-left: 20px;margin-top: 10px;font-weight: 900">
+                    您已选择：
+                </span>
+                <span>苹果</span>
+
+                <div style="margin-top: 10px" class="line_dashed"></div>
+                <span style="display: inline-block;margin-left: 47px;margin-top: 10px;font-weight: 900">材质：</span>
+                <span>苹果 苹果</span>
+                <div class="line_dashed"></div>
+
+                <span style="display: inline-block;margin-left: 47px;margin-top: 10px;font-weight: 900">品牌：</span>
+                <span>苹果 苹果</span>
+                <div class="line_dashed"></div>
+
+                <span style="display: inline-block;margin-left: 47px;margin-top: 10px;font-weight: 900">风格：</span>
+                <span>苹果 苹果</span>
+            </div>
+
+            <div class="more">
+                <span>更多选项</span>
+            </div>
+            <div class="blank"></div>
+            <div class="sort">
+                <span style="display: inline-block;margin-left: 10px;color: black">排序：</span>
+                <span>价格</span>
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                <span>销量</span>
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                <span>最新</span>
+                <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                <div class="total">
+                    <span style="color: red">共xx件商品</span>
+                    <span style="color: red">1</span>/675
+                    <i class="fa fa-caret-square-o-left" aria-hidden="true"></i>
+                    <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="item_pic">
+                <img style="width: 210px" src="image/9.png" alt="">
+                <span>vivo X9 全网通 4GB+64GB</span>
+                <br>
+                <div class="price">
+                    <span>$2999</span>
+                </div>
+                <div class="number">
+                    <span class="submit" style="float: left;line-height: 20px">-</span>
+                    <span>1</span>
+                    <span class="plus"style="float: right;line-height: 20px">+</span>
+                </div>
+                <div class="action">
+                    <span>买</span>
+                </div>
+            </div>
+            <div class="item_pic">
+                <img style="width: 210px" src="image/9.png" alt="">
+                <span>vivo X9 全网通 4GB+64GB</span>
+                <br>
+                <div class="price">
+                    <span>$2999</span>
+                </div>
+                <div class="number">
+                    <span class="submit" style="float: left;line-height: 20px">-</span>
+                    <span>1</span>
+                    <span class="plus"style="float: right;line-height: 20px">+</span>
+                </div>
+                <div class="action">
+                    <span>买</span>
+                </div>
+            </div>
+            <div class="item_pic">
+                <img style="width: 210px" src="image/9.png" alt="">
+                <span>vivo X9 全网通 4GB+64GB</span>
+                <br>
+                <div class="price">
+                    <span>$2999</span>
+                </div>
+                <div class="number">
+                    <span class="submit" style="float: left;line-height: 20px">-</span>
+                    <span>1</span>
+                    <span class="plus"style="float: right;line-height: 20px">+</span>
+                </div>
+                <div class="action">
+                    <span>买</span>
+                </div>
+            </div>
+            <div class="item_pic">
+                <img style="width: 210px" src="image/9.png" alt="">
+                <span>vivo X9 全网通 4GB+64GB</span>
+                <br>
+                <div class="price">
+                    <span>$2999</span>
+                </div>
+                <div class="number">
+                    <span class="submit" style="float: left;line-height: 20px">-</span>
+                    <span>1</span>
+                    <span class="plus"style="float: right;line-height: 20px">+</span>
+                </div>
+                <div class="action">
+                    <span>买</span>
+                </div>
+            </div>
+            <div class="item_pic">
+                <img style="width: 210px" src="image/9.png" alt="">
+                <span>vivo X9 全网通 4GB+64GB</span>
+                <br>
+                <div class="price">
+                    <span>$2999</span>
+                </div>
+                <div class="number">
+                    <span class="submit" style="float: left;line-height: 20px">-</span>
+                    <span>1</span>
+                    <span class="plus"style="float: right;line-height: 20px">+</span>
+                </div>
+                <div class="action">
+                    <span>买</span>
+                </div>
+            </div>
+            <div class="item_pic">
+                <img style="width: 210px" src="image/9.png" alt="">
+                <span>vivo X9 全网通 4GB+64GB</span>
+                <br>
+                <div class="price">
+                    <span>$2999</span>
+                </div>
+                <div class="number">
+                    <span class="submit" style="float: left;line-height: 20px">-</span>
+                    <span>1</span>
+                    <span class="plus"style="float: right;line-height: 20px">+</span>
+                </div>
+                <div class="action">
+                    <span>买</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

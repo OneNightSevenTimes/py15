@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .pg-head{
+            /*height: 40px;*/
+            /*float: left;*/
+            margin-left: 50px;
+            margin-top: 10px;
+            /*width: 1000px;*/
+        }
+        .pg-body{
+            height: 440px;
+            width: 1200px;
+            margin:0 auto;
+            /*position: relative;*/
+            border: 1px solid #dddddd;
+
+        }
+        #left-img{
+            margin: 80px 80px;
+        }
+        .user_info{
+            position: relative;
+            float: right;
+            margin-top: 80px;
+            margin-right: 200px;
+        }
+        #auth_img{
+            position: relative;
+            top: 10px;
+        }
+        .star{
+            color: red;
+        }
+        .user_input{
+            height: 30px;
+            width: 220px;
+            margin-top: 20px;
+            /*margin-right: 10px;*/
+
+        }
+        .user_auth{
+            height: 30px;
+            width: 110px;
+            margin-top: 20px;
+        }
+        label{
+            width: 200px;
+        }
+        .button{
+            color: white;
+            width: 120px;
+            height: 30px;
+            position: absolute;
+            right: 0;
+            bottom:0;
+            background-color:#3ba354;
+            text-align: center;
+            line-height: 30px;
+            font-family: 楷体;
+            font-size: 15px;
+        }
+
+
+        .line{
+            width: 200px;
+            text-align: right;
+            font-size: 15px;
+            margin-top: 30px;
+            margin-left: 100px;
+
+        }
+        #forget{
+            text-decoration: none;
+        }
+        /*.submit{*/
+            /*width: 400px;*/
+        /*}*/
+        #login{
+            border: 1px solid transparent;
+            background-color: #E4393C;
+            font-size: 15px;
+            color: white;
+            width: 220px;
+            height: 30px;
+            margin-left: 114px;
+            margin-top: 20px;
+
+        }
+        .pg_tail{
+            text-align: center;
+            margin-top: 20px;
+        }
+        p{
+            position: relative;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="pg-head">
+            <img src="image/1.png" alt="">
+        </div>
+        <form>
+        <div class="pg-body">
+
+            <img id="left-img" src="image/2.png" alt="">
+
+            <div class="user_info">
+
+                <span class="star">*</span>
+
+                    <label for="user" style="width: 100px;display: inline-block">用户名：</label><input class="user_input" id="user" type="text" placeholder="用户名"/>
+                    <img style="position: absolute;top: 30px;right: 50px" src="image/4.png" alt="">
+                    <br>
+                    <span class="star">*</span>
+                    <label for="password" style="width: 100px;display: inline-block">密码：</label><input class="user_input" id="password" type="password" placeholder="密码"/>
+                    <img style="position: absolute;top: 85px;right: 50px" src="image/5.png" alt="">
+                    <br>
+
+                    <span class="star">*</span>
+                    <label for="auth" style="width: 100px;display:inline-block;">验证码：</label><input class="user_auth" id="auth" type="text" placeholder="验证码"/>
+                    <img id="auth_img" src="image/3.png" alt="">
+
+
+                    <div class="line">
+                        <input  type="checkbox" checked="checked">
+                        <span id="remember">自动登录</span>&nbsp;&nbsp;
+                        <a href="#" id="forget">忘记密码?</a>
+                    </div>
+                    <div class="submit">
+                        <button id="login" type="submit" style="width: 220px">登&nbsp;&nbsp;&nbsp;录</button>
+                    </div>
+
+            </div>
+            </form>
+            <div class="button">
+                免费注册>>
+            </div>
+        </div>
+        <div class="pg_tail">
+            © 2004-2017 www.xxxx.com.cn All Rights Reserved. xxxx 版权所有
+
+        </div>
+    </div>
+
+</body>
+</html>

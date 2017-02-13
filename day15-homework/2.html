@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .pg_head {
+            height: 30px;
+            background-color: silver;
+
+        }
+
+        .main {
+            font-size: 15px;
+            line-height: 30px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .pg_head_left {
+            float: left;
+            margin-left: 50px;
+            width: 600px;
+        }
+
+        .pg_body_left {
+            float: left;
+        }
+
+        .pg_head_right {
+            float: right;
+            margin-right: 50px;
+        }
+
+        .pg_head_img {
+            margin-left: 30px;
+        }
+
+        .pg_body {
+            border: 1px solid #dddddd;
+            width: 1260px;
+            height: 480px;
+            margin-left: 50px;
+            position: relative;
+        }
+
+        #title {
+            font-size: 25px;
+            margin-left: 40px;
+            position: absolute;
+            top: 40px;
+        }
+
+        .star {
+            color: red;
+        }
+
+        .user_info {
+            margin-top: 100px;
+            margin-left: 80px;
+            width: 450px;
+            position: relative;
+        }
+
+        #img_user {
+            position: absolute;
+            top: 4px;
+            right: 115px;
+        }
+
+        #img_number {
+            position: absolute;
+            top: 52px;
+            right: 115px;
+        }
+
+        #img_password {
+            position: absolute;
+            top: 100px;
+            right: 115px;
+        }
+
+        #img_pwd {
+            position: absolute;
+            top: 146px;
+            right: 115px;
+        }
+
+        #img_auth {
+            position: absolute;
+            top: 184px;
+            right: 86px;
+        }
+
+        .user_input {
+            width: 225px;
+            height: 25px;
+        }
+
+        .line {
+            text-align: center;
+            font-size: 10px;
+            margin-left: 51px;
+
+        }
+
+        #forget {
+            color: blue;
+        }
+
+        #login {
+            border: 1px solid transparent;
+            background-color: #E4393C;
+            font-size: 10px;
+            color: white;
+            /*width: 220px;*/
+            height: 30px;
+            margin-left: 108px;
+            margin-top: 40px;
+
+        }
+
+        .pg_body_right {
+            float: right;
+            margin-top: 100px;
+            margin-right: 100px;
+            font-size: 10px;
+            width: 300px;
+        }
+
+        #logging {
+            color: blue;
+        }
+
+        .line_dashed {
+            margin-top: 50px;
+            margin-right: 50px;
+            float: right;
+            height: 380px;
+            width: 0;
+            border: 1px dashed #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="pg_head">
+        <div class="main">
+
+            <div class="pg_head_left">
+                <a class="text" href="#">*收藏本站</a>
+            </div>
+            <div class="pg_head_right">
+                <a class="text" href="#">登录</a>&nbsp;
+                <a class="text" href="#">免费注册</a>&nbsp;
+                <a class="text" href="#">我的订单</a>&nbsp;
+                <a class="text" href="#">VIP会员俱乐部</a>&nbsp;
+                <a class="text" href="#">客户服务</a>
+            </div>
+        </div>
+    </div>
+    <div class="pg_head_img">
+        <img src="image/1.png" alt="">
+    </div>
+    <div class="pg_body">
+
+        <div class="pg_body_left">
+            <span id="title">注册新用户</span>
+
+            <div class="user_info">
+                <label for="user" style="width: 100px;display: inline-block;text-align: right">
+                    <span class="star">*</span>
+                    用户名：
+                </label>
+                <input class="user_input" id="user" type="text"/>
+                <img id="img_user" src="image/4.png" alt="">
+                <p>
+                    <label for="number" style="width: 100px;display: inline-block;text-align: right">
+                        <span class="star">*</span>
+                        手机号：
+                    </label>
+                    <input class="user_input" id="number" type="password"/>
+                    <img id="img_number" src="image/6.png" alt="">
+                </p>
+
+                <p>
+                    <label for="password" style="width: 100px;display: inline-block;text-align: right">
+                        <span class="star">*</span>
+                        登录密码：
+                    </label>
+                    <input class="user_input" id="password" type="password"/>
+                    <img id="img_password" src="image/5.png" alt="">
+                </p>
+
+                <p>
+                    <label for="pwd" style="width: 100px;display: inline-block;text-align: right">
+                        <span class="star">*</span>
+                        确认密码：
+                    </label>
+                    <input class="user_input" id="pwd" type="password"/>
+                    <img id="img_pwd" src="image/5.png" alt="">
+                </p>
+
+                <p>
+                    <label for="auth" style="width: 100px;display: inline-block;text-align: right">
+                        <span class="star">*</span>
+                        验证码：
+                    </label>
+                    <input style="width:100px;height: 25px" id="auth" type="password"/>
+                    <img id="img_auth" src="image/3.png" alt="">
+                </p>
+
+                <div class="line">
+                    <input type="checkbox" checked="checked">
+                    <span id="remember">我已阅读并同意</span>
+                    <a href="#" id="forget">《用户注册协议》</a>
+                </div>
+                <div class="submit">
+                    <button id="login" type="submit" style="width: 225px">同意以上协议并注册</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="pg_body_right">
+            <span>我已经注册，现在就</span>
+            <a id="logging" href="1.html">登录</a>
+            <br>
+            <img style="margin-top: 40px" src="image/7.png" alt="">
+        </div>
+        <div class="line_dashed"></div>
+
+    </div>
+
+
+</body>
+</html>

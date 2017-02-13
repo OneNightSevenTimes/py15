@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+                margin: 0;
+            }
+
+        .pg_head {
+            height: 30px;
+            background-color: silver;
+
+        }
+
+        .main {
+            font-size: 15px;
+            line-height: 30px;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .pg_head_left {
+            float: left;
+            margin-left: 50px;
+            width: 500px;
+        }
+        .pg_head_right {
+            float: right;
+            margin-right: 50px;
+            width: 600px;
+        }
+        .header{
+            width: 990px;
+            height: 100px;
+            margin: 0 auto;
+        }
+        #logo {
+            float: left;
+            padding-left: 5px;
+            width: 269px;
+        }
+        .stepflex {
+            display: block;
+            border-top:5px solid #ccc ;
+            text-align: center;
+            margin: 50px 0 0;
+            float: right;
+            width: 480px;
+            height: 36px;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .stepflex dl .s-num {
+            background-position: -46px 0;
+            position: relative;
+            margin: -15px auto 0;
+            color: #fff;
+            font-weight: 700;
+            width: 23px;
+            height: 23px;
+            line-height: 23px;
+        }
+        .stepflex dl  .s-num {
+            background-image: url(//misc.360buyimg.com/user/purchase/2.0.0/css/i/step2013.png);
+        }
+        .stepflex dl  .s-num1 {
+            background-position: -46px 0;
+            position: relative;
+            margin: -15px auto 0;
+            color: #fff;
+            font-weight: 700;
+            width: 23px;
+            height: 23px;
+            line-height: 23px;
+            background-image: url(//misc.360buyimg.com/user/purchase/2.0.0/css/i/step2013.png);
+            background-position-x: 91px;
+        }
+        .stepflex dl  .s-num2 {
+            background-position: -46px 0;
+            position: relative;
+            margin: -15px auto 0;
+            color: #fff;
+            font-weight: 700;
+            width: 23px;
+            height: 23px;
+            line-height: 23px;
+            background-image: url(//misc.360buyimg.com/user/purchase/2.0.0/css/i/step2013.png);
+            background-position-x: 114px;
+        }
+
+        .stepflex dl.done .s-text{
+           color:#caecb6 ;
+        }
+        .stepflex dl.done{
+            border-top-color:#caecb6 ;
+        }
+
+        .stepflex dl.doing {
+            border-top-color: #7abd54;
+        }
+        .stepflex dl.doing .s-text{
+            color: #7abd54;
+        }
+
+        .stepflex dl{
+            float: left;
+            position:relative ;
+            width: 160px;
+            top:-21px;
+            border-top: 5px solid #ccc;
+        }
+        .container{
+
+            width: 990px;
+            margin: auto;
+            margin-top: 10px;
+            border: 1px solid #cccccc;
+        }
+        .container .title{
+            background-color: #dddddd;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .container .title .all{
+            width: 100px;
+            float: left;
+
+        }
+        .container .title .item{
+            width: 300px;
+            float: left;
+        }
+        .container .title .price{
+            width: 150px;
+            float: left;
+            text-align: right;
+        }
+        .container .title .status{
+            width: 200px;
+            float: left;
+
+        }
+        .container .title .number{
+
+            float: left;
+            text-align: left;
+        }
+
+
+        .container .detail{
+            position: relative;
+            height: 80px;
+            border: 1px solid #dddddd;
+            color: #2459a2;
+            line-height: 80px;
+        }
+
+        .container .detail input{
+            position: absolute;
+            left: 30px;
+            top: 30px;
+        }
+        .container .total{
+            height: 50px;
+            position: relative;
+        }
+        .container .total input{
+            position: absolute;
+            left: 30px;
+            top: 15px;
+        }
+        .container .money{
+            height: 50px;
+            border: 1px solid #cccccc;
+            background-color: #dddddd;
+            position: relative;
+        }
+        .container .info{
+            height: 100px;
+            border: 1px solid #cccccc;
+        }
+
+        .container .time {
+            height: 80px;
+            border: 1px solid #cccccc;
+        }
+        .container .commit {
+            height: 60px;
+            border: 1px solid #cccccc;
+            position: relative;
+            font-size: 30px;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="pg_head">
+        <div class="main">
+
+            <div class="pg_head_left">
+                <a class="text" href="#">*收藏本站</a>
+            </div>
+            <div class="pg_head_right">
+                <a class="text" href="1.html">登录</a>&nbsp;
+                <a class="text" href="2.html">注册</a>&nbsp;
+                <a class="text" href="#">我的订单</a>&nbsp;
+                <a class="text" href="#">我的收藏</a>&nbsp;
+                <a class="text" href="#">VIP会员俱乐部</a>&nbsp;
+                <a class="text" href="#">客户服务</a>&nbsp;
+                <a class="text" href="#">关注</a>&nbsp;
+                <a class="text" href="#">手机版</a>
+            </div>
+        </div>
+    </div>
+    <div class="header clearfix">
+        <div id="logo">
+            <img src="image/10.png" alt="">
+        </div>
+        <div class="stepflex">
+            <dl class="first done">
+                <dt class="s-num">1</dt>
+                <dd class="s-text">
+                    1.我的购物车
+                    <s></s>
+                    <b></b>
+                </dd>
+            </dl>
+            <dl class="normal doing">
+                <dt class="s-num1">2</dt>
+                <dd class="s-text">
+                    2.填写核对订单信息
+                    <s></s>
+                    <b></b>
+                </dd>
+            </dl>
+            <dl class="normal last">
+                <dt class="s-num2">3</dt>
+                <dd class="s-text">
+                    3.成功提交订单
+                    <s></s>
+                    <b></b>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <span style="margin: 186px;font-size: 20px;font-weight: 800">
+        我的购物车
+    </span>
+    <div class="container">
+        <div class="title">
+            <div class="all">全选</div>
+            <div class="item">商品</div>
+            <div class="price">价格</div>
+            <div class="status">状态</div>
+            <div class="number">数量</div>
+            <div class="action">操作</div>
+
+        </div>
+
+        <div class="detail">
+            <input type="checkbox"/>
+            <img style="margin-left: 150px" src="image/11.png" alt="">
+            <span style="position: absolute">Go语言学习笔记</span>
+            <span style="position:absolute;float: left;margin-left: 280px">¥88.30</span>
+            <span style="position:absolute;float: left;margin-left: 405px">有货</span>
+            <span style="position:absolute;float: left;margin-left: 530px">1</span>
+            <span style="position:absolute;float: left;margin-left: 642px">删除</span>
+        </div>
+        <div class="detail">
+            <input type="checkbox"/>
+            <img style="margin-left: 150px" src="image/11.png" alt="">
+            <span style="position: absolute">Go语言学习笔记</span>
+            <span style="position:absolute;float: left;margin-left: 280px">¥88.30</span>
+            <span style="position:absolute;float: left;margin-left: 405px">有货</span>
+            <span style="position:absolute;float: left;margin-left: 530px">1</span>
+            <span style="position:absolute;float: left;margin-left: 642px">删除</span>
+        </div>
+        <div class="total">
+            <input type="checkbox"/>
+            <span style="position: absolute;left: 80px;top: 15px;">全选</span>
+            <span style="position: absolute;left: 200px;top: 15px;">删除选中商品</span>
+            <span style="display:inline-block;float:right;margin: 15px 30px">
+                <span style="float: right">件商品</span>
+                <span style="float: right;color:red">9</span>
+            </span>
+        </div>
+        <div class="money">
+            <span>
+                <span style="float: right;margin: 10px;color: red;font-size: 30px">¥200</span>
+                <span style="float: right;margin: 19px;">小计：</span>
+
+            </span>
+        </div>
+        <div class="info">
+            <span style="font-size: 20px;font-weight: 800;display: inline-block;margin-left: 10px">收货人信息</span>
+            <br>
+            <span style="font-size: 20px;display: inline-block;margin:5px 50px">sb 11111111111</span>
+            <br>
+            <span style="font-size: 20px;display: inline-block;margin:5px 50px">北京市朝阳区霄云路鹏润大厦29层</span>
+
+        </div>
+        <div class="pay">
+            <span style="font-size: 20px;font-weight: 800;display: inline-block;margin:10px 10px">支付方式</span>
+            <br>
+            <span style="font-size: 20px;display: inline-block;margin:5px 50px">在线支付</span>
+        </div>
+        <div class="time">
+            <span style="font-size: 20px;font-weight: 800;display: inline-block;margin:10px 10px">配送和预约</span>
+            <br>
+            <span style="font-size: 20px;display: inline-block;margin:5px 50px">
+                京东快递 预计10月25日[周六]9：00-19:00送达
+            </span>
+        </div>
+        <div class="commit">
+            <input style="background-color:#C60A0A;
+            height: 60px;width: 150px;position: absolute;
+            right: 0;font-size:20px;color: white"type="submit">
+            <span style="position: absolute;left: 600px;top: 15px">应付总额：</span>
+            <span style="position: absolute;left: 750px;top: 15px;color: red">¥200</span>
+
+        </div>
+    </div>
+
+</body>
+</html>
