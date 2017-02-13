@@ -1,3 +1,5 @@
+获取双11当天00:00-01:00CPU负载和使用率
 配置文件在conf/settings.py下
 执行bin下的start.py即可
+    python3 start.py
 环境：python3 需安装pymysql模块
