@@ -1,0 +1,12 @@
+host='10.58.47.88'
+port=3306
+user='zabbix'
+passwd='zabbix@gome'
+db='zabbix'
+file_item = 'cpu_load_item.txt'
+file_result = 'cpu_load.txt'
+clock_from_ago = 1478707201
+clock_end_ago = 1478710800
+clock_from = 1478793601
+clock_end = 1478797200
+item = 'system.cpu.load[all,avg1]'
