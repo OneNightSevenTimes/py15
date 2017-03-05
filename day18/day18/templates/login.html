@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: #2459a2;
+        }
+        .pg_content{
+            margin-top: 50px;
+
+        }
+        .title{
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 50px 0;
+        }
+        .info{
+            border:1px solid #dddddd;
+            background-color: #dddddd;
+            width: 500px;
+            height: 300px;
+            margin: auto;
+            border-radius: 5%;
+            text-align: center;
+            /*position: relative;*/
+        }
+        .info label{
+            width: 130px;
+            display: block;
+            position: absolute;
+            margin-top: 58px;
+        }
+        .info input{
+            width: 250px;
+            height: 30px;
+            margin-top: 50px;
+        }
+        .info .submit{
+            background-color: #F45B4B;
+            width: 100px;
+            height: 40px;
+            margin-top: 50px;
+            color: white;
+            font-size: 25px;
+        }
+        .pg_tail{
+            text-align: center;
+            margin-top: 80px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="pg_head">
+        <img src="/static/logo.png" alt="">
+    </div>
+    <div class="pg_content">
+        <div class="title">
+            <span>Hades运维系统</span>
+        </div>
+        <div class="info">
+            <form action="login.html" method="POST">
+                <label for="username">用户名</label>
+                <input id="username" type="text" name="user"/><br>
+                <label for="pwd">密码</label>
+                <input id="pwd" type="text" name="pwd"/><br>
+                <input  type="submit" class="submit" value="登录"/>
+            </form>
+        </div>
+    </div>
+    <div class="pg_tail">
+        <span>
+            Copyright © 2016-2017 V1.0.3 www.gomeplus.com All Rights Reserved. 国美美信@版权所有
+        </span>
+    </div>
+
+</body>
+</html>

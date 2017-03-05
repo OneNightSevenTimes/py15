@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/commons.css">
+</head>
+<body>
+    <h1>欢迎光临</h1>
+    <img src="/static/banner.jpg" alt="">
+    <form action="index_bak.html" method="POST">
+        <p>主机<input type="text" name="host"/></p>
+        <p>端口<input type="text" name="port"/></p>
+        <input type="submit" value="提交"/>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>主机</th>
+                <th>端口</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    <td>{{ row.host_id }}</td>
+                    <td>{{ row.hostname }}</td>
+                    <td>{{ row.port }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

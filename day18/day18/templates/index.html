@@ -1,0 +1,136 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/commons.css">
+</head>
+<body>
+    <div class="pg_head">
+        <div class="logo left">
+            <a href="https://www.gomeplus.com"><img src="/static/logo.png" alt=""></a>
+        </div>
+        <div class="pg_head_menu left">
+            <span class="left">用户管理</span>
+            <span class="left">授权管理</span>
+            <div class="power left">
+                <span>资产管理</span>
+                <div class="power_list">
+                    <a href="">查看部门</a>
+                    <a href="">查看机房</a>
+                    <a href="">添加资产</a>
+                </div>
+            </div>
+        </div>
+        <div class="menu_top left">
+            <div class="menu">
+                <span></span>
+            </div>
+        </div>
+        <div class="userinfo right">
+            <img src="/static/admin.png" alt="" width="40" height="40">
+            <span style="position: absolute;top: 10px;right: 40px">admin</span>
+            <div class="infolist">
+                <a href="">我的信息</a>
+                <a href="">登录</a>
+                <a href="">退出</a>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="pg_body">
+        <div class="pg_menu">
+            <div class="item">
+                <div class="tl">菜单一</div>
+                <div class="content hide">
+                    <a>内容一</a>
+                    <a>内容二</a>
+                    <a>内容三</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="tl">菜单二</div>
+                <div class="content hide">
+                    <a>内容一</a>
+                    <a>内容二</a>
+                    <a>内容三</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="tl">菜单三</div>
+                <div class="content hide">
+                    <a>内容一</a>
+                    <a>内容二</a>
+                    <a>内容三</a>
+                </div>
+            </div>
+        </div>
+        <div class="pg_content right">
+            <div class="praise">
+                <span>赞</span>
+            </div>
+            <div class="form">
+                <input class="button" type="button" value="全选"onclick="selectAll();"/>
+                <input class="button"  type="button" value="取消"onclick="cancelAll();"/>
+                <input class="button"  type="button" value="反选"onclick="reverseAll();"/>
+                <input class="button"  type="button" value="添加"onclick="add_host();"/>
+                <table class="table" border="1">
+                    <thread>
+                        <tr>
+                            <th>操作</th>
+                            <th>主机</th>
+                            <th>IP</th>
+                            <th>端口</th>
+                            <th>操作</th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        {% for row in data %}
+                            <tr>
+                                <td><input type="checkbox"/></td>
+                                <td target="#hostname">{{ row.hostname }}</td>
+                                <td target="#ip">{{ row.host_ip }}</td>
+                                <td target="#port">{{ row.port }}</td>
+{#                                <td><input class="delete" type="submit"value="删除" /><br>#}
+{#                                    <input class="edit" type="button"value="编辑"/></td>#}
+                                <td><a href="/delete/?h={{ row.hostname }}">删除</a></td>
+                            </tr>
+                        {% endfor %}
+
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="background hide">
+
+            </div>
+            <div class="add_host hide">
+                <div class="title">
+                    <span>主机信息</span>
+                </div>
+                <form action="/index/" method="POST">
+                    <div class="info">
+                        <label>主机名</label><input  name="host" target="#hostname" id="hostname" type="text"/><br>
+                        <label>IP</label><input  name="host_ip" target="#ip" id="ip" type="text"/><br>
+                        <label>端口</label><input name="port" target="#port" id="port" type="text"/><br>
+                    </div>
+
+                    <div class="action">
+                        <input  class="sure" type="submit" value="确定"/>
+                        <input type="button" value="取消" onclick="show()"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <a class="bottom">返回顶部</a>
+
+    </div>
+    <script src="{% static "jquery-1.12.4.js" %}"></script>
+    <script src="{% static "commons.js"%}"></script>
+
+</body>
+
+</html>
